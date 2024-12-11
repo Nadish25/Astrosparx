@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets Direction</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #090A0F;
+        }
+
+        /* Background and layout */
+        .background {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #090A0F, #1b263b, #090A0F);
+        }
+
+        /* Centering the content */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #090A0F;
+            z-index: 1;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #f0f8ff;
+        }
+
+        /* Iframe styling */
+        iframe {
+            width: 100%;
+            height: 400px; /* Adjust the height based on your content */
+            border: none;
+            display: block;
+            margin-top: 50px;
+        }
+
+        /* Planets container */
+        #planet-data {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        /* Planet item styling */
+        .planet {
+            background-color: rgba(71, 12, 12, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Planet hover effect */
+        .planet:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Planet image styling */
+        .planet img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <iframe src="landing.html" title="Astrosparx"></iframe>
+    <div class="background">
+        
+
+        <!-- Embed the iframe above the planets section -->
+        
+        <div class="content">
+            <h1>Current Directions of Planets</h1>
+        </div>
+    </div>
+        <section id="planets">
+            <div id="planet-data">
+                <!-- Planet data will be injected here -->
+            </div>
+        </section>
+    
+
+    <script src="script.js"></script>
+    <p style="font-size:12px"><a href="sources.html">icon sources</a></p>
+
+</body>
+</html>

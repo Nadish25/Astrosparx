@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+    <style>
+        /* Starry background */
+        /* Converted from SASS to CSS */
+        
+        /* Function for multiple box shadows */
+        .stars-small {
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: 
+                100px 100px #FFF, 300px 300px #FFF, 600px 500px #FFF, 800px 700px #FFF,
+                150px 1200px #FFF, 1600px 1200px #FFF, 1900px 400px #FFF, 200px 2000px #FFF,
+                1100px 800px #FFF, 1200px 1000px #FFF, 1700px 500px #FFF, 700px 1500px #FFF,
+                1800px 1300px #FFF, 500px 600px #FFF, 1500px 400px #FFF, 200px 1900px #FFF;
+            animation: animStar 50s linear infinite;
+        }
+
+        .stars-medium {
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 
+                200px 300px #CCC, 400px 600px #CCC, 900px 800px #CCC, 1000px 1200px #CCC,
+                200px 1300px #CCC, 600px 1800px #CCC, 1500px 1100px #CCC, 1200px 1900px #CCC,
+                1700px 200px #CCC, 1900px 1300px #CCC, 1000px 500px #CCC, 300px 1500px #CCC,
+                600px 1800px #CCC, 1400px 700px #CCC, 800px 1600px #CCC;
+            animation: animStar 100s linear infinite;
+        }
+
+        .stars-big {
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            box-shadow: 
+                300px 300px #AAA, 600px 600px #AAA, 900px 900px #AAA, 1500px 1200px #AAA,
+                1600px 800px #AAA, 1200px 1500px #AAA, 1000px 100px #AAA, 1500px 1800px #AAA,
+                1300px 1600px #AAA, 1600px 500px #AAA, 200px 1000px #AAA, 500px 1300px #AAA,
+                1000px 1700px #AAA, 200px 2000px #AAA;
+            animation: animStar 150s linear infinite;
+        }
+
+        html {
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            overflow: hidden;
+        }
+
+        /* Title styling */
+        #title {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            color: #FFF;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 50px;
+            letter-spacing: 10px;
+            margin-top: -60px;
+            padding-left: 10px;
+        }
+
+        #title span {
+            background: -webkit-linear-gradient(rgb(39, 35, 132), #5980a7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes animStar {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-2000px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars-small"></div>
+    <div class="stars-medium"></div>
+    <div class="stars-big"></div>
+
+    <!-- Title -->
+    <div id="title">
+        <span>ASTROSPARX</span><br>
+        <span></span>
+    </div>
+
+</body>
+</html>

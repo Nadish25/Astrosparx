@@ -1,0 +1,113 @@
+
+/* Import the custom font for planet names */
+@font-face {
+    font-family: 'PlanetFont';
+    src: url('planetfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #FFD700;
+}
+
+p {
+    font-size: 1.2em;
+    color: #ed0000;
+}
+
+/* Landing section with animated starry background */
+#landing {
+    position: relative;
+    height: 100vh;
+    background: url('https://www.transparenttextures.com/patterns/black-tie.png') repeat;
+    overflow: hidden;
+}
+
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2014/11/04/14/10/space-516119_960_720.jpg') center/cover no-repeat;
+    animation: starfield 30s linear infinite;
+}
+
+#space {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+#planets {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #FFD700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#planet-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.planet {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    width: 180px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+.planet:hover {
+    transform: scale(1.1);
+}
+
+.planet img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.planet h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    color: #FFD700;
+    font-family: 'PlanetFont'; /* Apply custom planet font */
+}
+
+.planet p {
+    color: #e8ee31;
+    font-size: 1.1em;
+}
+
+@keyframes starfield {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
