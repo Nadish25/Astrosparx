@@ -76,7 +76,7 @@ async function fetchPlanetData() {
                 if (output[planet]) {
                     planetList += `
                         <div class="planet">
-                            <img src="images/${planet.toLowerCase()}.png" alt="${planet}">
+                            <img src="${planet.toLowerCase()}.png" alt="${planet}">
                             <h3 style="font-family: 'PlanetFont';">${planet}</h3>
                             <p>Current Direction: ${output[planet].fullDegree}°</p>
                         </div>
