@@ -111,3 +111,18 @@ h2 {
     0% { background-position: 0 0; }
     100% { background-position: 100% 100%; }
 }
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1b273576;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.button:hover {
+    background-color: #002d5c;
+}
