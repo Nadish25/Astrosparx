@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Picture of the Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            background: #2e2e2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .loading {
+            font-size: 18px;
+            color: #ff4500;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NASA Picture of the Day</h1>
+        <p id="loading" class="loading">Loading...</p>
+        <img id="apod-image" src="" alt="NASA APOD" style="display: none;">
+        <h2 id="title" style="display: none;"></h2>
+        <p id="description" style="display: none;"></p>
+    </div>
+    <footer>
+        Powered by NASA's APOD API
+    </footer>
+
+    <script>
+        const apiKey = "EeSyLKflZb9HjULkkm4G980pa9Zuxm01T8fCp0GC";
+        const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.media_type === "image") {
+                    document.getElementById("apod-image").src = data.url;
+                    document.getElementById("apod-image").style.display = "block";
+                } else {
+                    document.getElementById("apod-image").src = "";
+                    document.getElementById("apod-image").style.display = "none";
+                }
+
+                document.getElementById("title").textContent = data.title;
+                document.getElementById("description").textContent = data.explanation;
+
+                document.getElementById("title").style.display = "block";
+                document.getElementById("description").style.display = "block";
+                document.getElementById("loading").style.display = "none";
+
+            } catch (error) {
+                document.getElementById("loading").textContent = "Failed to load data. Please try again later.";
+                console.error("Error fetching APOD data:", error);
+            }
+        }
+
+        fetchAPOD();
+    </script>
+</body>
+</html>
